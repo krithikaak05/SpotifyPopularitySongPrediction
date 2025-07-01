@@ -112,6 +112,6 @@ We set out to analyze and predict Spotify song popularity using:
 ## 🗂️ Project Structure
 ```plaintext
 Spotify-Popularity-Prediction/
-├── FinalCode_PT1.ipynb      # Full Google Colab Notebook
-├── FinalCode_PT2.pdf      # Full Google Colab Notebook
+├── FinalCode_PT1.ipynb      # Jupyter Notebook
+├── FinalCode_PT2.pdf      # Colab Jupyter  Notebook
 ├── README.md          # Project Overview (this file)
