@@ -108,6 +108,16 @@ We set out to analyze and predict Spotify song popularity using:
 - 📉 The dataset was complex with **non-linear patterns** and low predictability using basic features alone.
 
 ---
+# 📄 References
+- 📂 [Spotify Songs Dataset (Kaggle)](https://www.kaggle.com/datasets/edalrami/19000-spotify-songs)
+- 🎧 [Spotify API Documentation](https://developer.spotify.com/documentation/web-api/reference/get-track)
+
+---
+
+## ✨ Acknowledgments
+Thanks to **Spotify** for their API and to the **Kaggle community** for providing accessible datasets that enable meaningful projects like this.
+
+---
 
 ## 🗂️ Project Structure
 ```plaintext
