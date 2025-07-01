@@ -1,75 +1,117 @@
-# 🎧 Spotify Song Popularity Prediction
+# 🎵 Spotify Song Popularity Prediction 🎵  
+*A Machine Learning Exploration into What Makes a Song Go Viral*  
 
-## 📌 Project Overview
-This project focuses on **predicting the popularity of Spotify songs** based on various musical attributes using multiple machine learning models.  
-The goal is to identify key features that may influence a song's popularity and develop predictive insights that can help artists, producers, and the music industry.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white) 
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Modeling-orange?logo=Scikit-Learn&logoColor=white) 
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)  
+
+---
+
+## 🚀 Project Summary
+This project aims to **predict the popularity of Spotify songs** based on their musical and technical attributes.  
+Using **data science and machine learning**, we investigated whether it’s possible to estimate a song's popularity score using features like energy, danceability, and tempo.
+
+> 🎯 **Goal:** Build predictive models to uncover patterns that make songs popular on Spotify.
+
+---
+
+## 📦 Table of Contents
+- [🎯 Problem Statement](#-problem-statement)
+- [📚 Dataset](#-dataset)
+- [⚙️ Approach](#️-approach)
+- [🛠️ Tools Used](#️-tools-used)
+- [📊 Model Performance](#-model-performance)
+- [💡 Key Takeaways](#-key-takeaways)
+- [🗂️ Project Structure](#️-project-structure)
+- [🚀 How to Run](#-how-to-run)
+- [👩‍💻 Authors](#-authors)
+- [📄 References](#-references)
 
 ---
 
 ## 🎯 Problem Statement
-In the highly competitive music streaming landscape, understanding **what makes a song popular** is essential.  
-This project explores whether song attributes like acousticness, danceability, energy, and instrumentalness can help predict a song's Spotify popularity.
+The popularity of songs on Spotify is influenced by various audio features, but **what exactly makes a song popular?**  
+We set out to analyze and predict Spotify song popularity using:
+- Song-specific attributes (acousticness, danceability, energy, etc.)
+- Regression and ensemble machine learning models
 
 ---
 
 ## 📚 Dataset
-- **Source:** [Kaggle - Spotify Songs Dataset](https://www.kaggle.com/datasets/edalrami/19000-spotify-songs)
-- **Size:** 18,835 songs | 15 features
-
-Key attributes include:
-- **Acousticness**
-- **Danceability**
-- **Energy**
-- **Instrumentalness**
-- **Loudness**
-- **Speechiness**
-- **Tempo**
-- **Valence**
-- **Song Popularity (Target Variable)**
-
----
-
-## ⚙️ Methods & Workflow
-1. **Data Cleaning:**  
-   - Removed duplicates  
-   - Validated data ranges  
-   - Handled skewed distributions with log transformations
-
-2. **Exploratory Data Analysis (EDA):**  
-   - Correlation heatmaps  
-   - Distribution plots  
-   - Scatter plots  
-
-3. **Statistical Testing:**  
-   - Shapiro-Wilk test for normality  
-   - QQ-Plots
-
-4. **Feature Selection:**  
-   - Removed insignificant features based on p-values from regression analysis
-
-5. **Modeling Techniques Explored:**  
-   - Naive Model (Baseline)  
-   - Linear Regression  
-   - Decision Trees  
-   - K-Nearest Neighbors (KNN)  
-   - Random Forest Regressor  
-   - Gradient Boosting  
-   - XGBoost
-
-6. **Performance Metrics:**  
-   - Root Mean Squared Error (RMSE)  
-   - R-squared (R² Score)
+- 📂 **Source:** [Kaggle: Spotify Songs Dataset](https://www.kaggle.com/datasets/edalrami/19000-spotify-songs)
+- 📊 **Size:** 18,835 songs | 15 features
+- 🎧 **Attributes:**
+  - Acousticness
+  - Danceability
+  - Energy
+  - Instrumentalness
+  - Tempo
+  - Valence
+  - Loudness
+  - Speechiness
+  - Key, Mode, Duration, and more
 
 ---
 
-## 🏆 Key Results
-- ✅ **Best Model:** Random Forest Regressor  
-- ✅ **Random Forest Performance:**  
-   - Validation R²: ~0.365  
-   - RMSE: 17.739  
+## ⚙️ Approach
+### 🔍 Exploratory Data Analysis (EDA)
+- Visualized attribute distributions
+- Investigated correlations and multicollinearity
+- Performed log transformations to handle skewed data
 
-- ✅ **Insights:**
-   - No strong linear correlation between song attributes and popularity
-   - Song duration, key, audio mode, and speechiness were insignificant predictors
-   - Non-linear models performed better than linear ones
+### 🧹 Data Preprocessing
+- Removed duplicates
+- Handled skewness and outliers
+- Standardized features
 
+### 🧮 Model Development
+- Baseline: Naive model
+- Linear Regression
+- Decision Trees
+- K-Nearest Neighbors (KNN)
+- Random Forest 🌟 (Best Performer)
+- Gradient Boosting
+- XGBoost
+
+### 📐 Evaluation Metrics
+- Root Mean Squared Error (RMSE)
+- R-squared (R² Score)
+
+---
+
+## 🛠️ Tools Used
+- **Python 3.8+**
+- **Scikit-Learn**
+- **Pandas & NumPy**
+- **Matplotlib & Seaborn**
+- **Spotify API (Reference)**
+
+---
+
+## 📊 Model Performance
+| Model                | R² Score (Validation) | RMSE   | Notes                           |
+|---------------------|------------------------|--------|---------------------------------|
+| Naive Model          | -9.74                  | 22.17  | Baseline                       |
+| Linear Regression    | 0.043                  | 21.62  | Poor fit, significant residuals |
+| Decision Trees       | -0.14                  | 24.60  | Overfitting and underfitting    |
+| KNN                  | -10.58                 | 21.39  | Very poor performance           |
+| **Random Forest**    | **~0.365**             | 17.74  | ⭐ Best performing model ⭐      |
+| Gradient Boosting    | ~0.191                 | 19.99  | Average                        |
+| XGBoost              | ~0.240                 | 19.41  | Moderate                       |
+
+---
+
+## 💡 Key Takeaways
+- 🎶 **No strong linear correlation** between most song features and popularity.
+- 🏆 **Random Forest Regressor outperformed** other models despite low variance explanation (~36.5%).
+- 🔎 Features like **song duration, key, mode, and speechiness were dropped** due to insignificant impact.
+- 📉 The dataset was complex with **non-linear patterns** and low predictability using basic features alone.
+
+---
+
+## 🗂️ Project Structure
+```plaintext
+Spotify-Popularity-Prediction/
+├── FinalCode.ipynb      # Full Jupyter Notebook
+├── FinalReport.pdf    # Detailed Project Report
+├── README.md          # Project Overview (this file)
